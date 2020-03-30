@@ -15,11 +15,15 @@
   transition: 0.3s;
 }
 
+.App-body {
+  display: flex;
+}
+
 .App-link {
   color: #61dafb;
 }
 
-.calculatorform {
+.calculatorform, .results {
   margin: 30px;
   padding: 50px;
   width: 33%;
