@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0d83a7;
   height: 75px;
   display: flex;
   flex-direction: column;
@@ -11,8 +11,28 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.calculatorform {
+  margin: 30px;
+  padding: 50px;
+  width: 33%;
+  height: 375px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.calculatorform p {
+  color: red;
+  font-size: 0.75rem;
+}
+
+.calculatorform input {
+  width: 200px;
 }
