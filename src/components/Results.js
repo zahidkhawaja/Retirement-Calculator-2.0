@@ -10,7 +10,7 @@ const Results = ({ result }) => {
     return (
         <div className = "results">
             <h2>Results</h2>
-            <p>You will retire with ${result}!</p>
+            <p>You will retire with ${result.toLocaleString()}!</p>
             <div className = "resultschart">
             <LineChart width={800} height={300} data={data.price}>
                 <Line type="monotone" dataKey="value" stroke="#40E0D0" />
