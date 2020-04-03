@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core";
 
 const Calculator = ({ setResult }) => {
     const { handleSubmit, register, errors } = useForm();
@@ -18,6 +19,21 @@ const Calculator = ({ setResult }) => {
         };
         setResult(retirementSavings);
     };
+
+    const StyledButton = withStyles({
+      root: {
+        background: 'coral',
+        borderRadius: 5,
+        border: 0,
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+        boxShadow: '0 3px 5px 2px rgba(0,0,0,0.2)',
+        '&:hover': {
+          backgroundColor: 'rgb(250, 149, 112)',
+        },
+      },
+    })(Button);
 
     return (
         <div className = "calculatorform">
@@ -49,7 +65,7 @@ const Calculator = ({ setResult }) => {
             inputRef={register({
               required: "Please enter your expected retirement age.",
               validate: value =>
-              Number.isInteger(parseInt(value)) || "You must enter an integer under 100."
+              Number.isInteger(parseInt(value)) || "You must enter an integer."
             })}
             placeholder="Expected Retirement Age"
           />
@@ -89,9 +105,9 @@ const Calculator = ({ setResult }) => {
           <p>{errors.monthlycontribution && errors.monthlycontribution.message}</p>
           <br />
 
-          <Button variant="contained" color="primary" type="submit">
+          <StyledButton type="submit">
             Calculate
-          </Button>
+          </StyledButton>
 
             </form>
             </div>
