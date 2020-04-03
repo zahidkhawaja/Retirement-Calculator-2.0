@@ -17,6 +17,8 @@
 
 .App-body {
   display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .App-link {
@@ -24,12 +26,24 @@
 }
 
 .calculatorform, .results {
-  margin: 30px;
-  padding: 50px;
-  width: 33%;
-  height: 375px;
+  margin-top: 25px;
+  height: 600px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  border-radius: 10px;
+}
+
+.calculatorform {
+  width: 30%;
+}
+
+.results {
+  width: 60%;
+}
+
+.body-container {
+  display: flex;
+  justify-content: center;
 }
 
 .calculatorform p {
@@ -39,4 +53,8 @@
 
 .calculatorform input {
   width: 200px;
+}
+
+h1 {
+  font-size: 2rem;
 }
