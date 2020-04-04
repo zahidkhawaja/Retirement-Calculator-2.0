@@ -18,6 +18,7 @@ const Calculator = ({ setResult }) => {
             retirementSavings += Math.round(totalToDate);
         };
         setResult(retirementSavings);
+        console.log(values);
     };
 
     const StyledButton = withStyles({
