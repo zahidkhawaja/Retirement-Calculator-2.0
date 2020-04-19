@@ -17,7 +17,13 @@ const Calculator = ({ setResult }) => {
             let totalToDate = yearlyContribution + annualGrowth;
             retirementSavings += Math.round(totalToDate);
         };
-        setResult(retirementSavings);
+        setResult({
+          age: values.age,
+          retirementage: values.retirementage, 
+          currentsavings: values.currentsavings, 
+          monthlycontribution: values.monthlycontribution,
+          retirementSavings: retirementSavings
+        });
         console.log(values);
     };
 

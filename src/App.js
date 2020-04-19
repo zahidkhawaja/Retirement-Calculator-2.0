@@ -4,7 +4,14 @@ import Calculator from "./components/Calculator";
 import Results from "./components/Results";
 
 function App() {
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState({
+    age: "0",
+    retirementAge: "0", 
+    currentSavings: "0", 
+    monthlyContribution: "0",
+    retirementSavings: "0"
+  });
+
   return (
     <div className="App">
       <header className="App-header">

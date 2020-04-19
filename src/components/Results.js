@@ -1,25 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 
-const Results = ({ result }) => {
+const Results = props => {
 
     const [data, setData] = useState({
-        list1: [
-            { x: 20, y: 1000 },
-            { x: 30, y: 3000 },
-            { x: 40, y: 5000 },
-            { x: 50, y: 7000 },
-            { x: 60, y: 9000 },
-            { x: 70, y: 11000 }
-          ]
+          list1: []
     });
+
+    useEffect(() => {
+        setData({
+            list1: [
+              { x: parseInt(props.result.age), y: parseInt(props.result.currentSavings) },
+              { x: parseInt(props.result.retirementAge), y: props.result.retirementSavings }
+            ]
+      })
+      console.log("PROPS", props);
+    }, [props.result.retirementSavings]);
 
     const { list1 } = data;
 
     return (
         <div className = "results">
             <h2>Results</h2>
-            <p>You will retire with ${result.toLocaleString()}!</p>
+            <p>You will retire with ${props.result.retirementSavings.toLocaleString()}!</p>
             <div className = "resultschart">
             <ScatterChart
         width={850}
